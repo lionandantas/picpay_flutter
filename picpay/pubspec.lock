@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
+  connectivity:
+    dependency: "direct main"
+    description:
+      name: connectivity
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.4"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -41,6 +48,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_simple_dependency_injection:
+    dependency: "direct main"
+    description:
+      name: flutter_simple_dependency_injection
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -144,3 +158,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.2.2 <3.0.0"
+  flutter: ">=1.2.0 <2.0.0"
