@@ -14,3 +14,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+
+
+<table style="width:100%">
+  <tr>
+    <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190920-161644.png" alt="Splash Screen" width="250"/></th>
+    <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190920-161631.png" alt="Enter Page" width="250"/></th> 
+   
+  </tr>
+  
+</table>
+
