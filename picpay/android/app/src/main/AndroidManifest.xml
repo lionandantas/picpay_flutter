@@ -9,6 +9,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="picpay"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
