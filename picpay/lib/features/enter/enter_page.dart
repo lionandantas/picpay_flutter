@@ -7,6 +7,7 @@ import 'package:picpay/features/enter/enter_presenter.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:picpay/models/Quality.dart';
 import 'package:picpay/widgets/PicPayButton.dart';
+import 'package:picpay/widgets/PicPayButtonHelp.dart';
 
 class EnterPage extends StatefulWidget {
   @override
@@ -83,6 +84,7 @@ class _EnterPageState extends State<EnterPage>
     var form = Container(
       decoration: BoxDecoration(color: PicpayStyles.primaryColor),
       width: double.infinity,
+      height: double.infinity,
       child: ListView(
         children: <Widget>[
           Column(
@@ -125,9 +127,16 @@ class _EnterPageState extends State<EnterPage>
                         fontSize: 17.0,
                       )),
                 ),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 150.0, left: 1.0, right: 1.0),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: PicPayButtonHelp(onPressed: () {}),
+                ),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -160,7 +169,7 @@ class _EnterPageState extends State<EnterPage>
                         hookUpPlusList[index].subTitle,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                             color: PicpayStyles.picPayText,
                             fontFamily: 'Robo'),
                       ),
