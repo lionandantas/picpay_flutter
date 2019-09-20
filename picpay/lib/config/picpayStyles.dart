@@ -12,4 +12,6 @@ class PicpayStyles {
   static Color greyMedium = HexColor("#828282");
   static Color greyTabPrimary = HexColor("#F0F0F0");
   static Color greyTabSecondary = HexColor("#AAAAAA");
+  static Color picPayText = HexColor("#0e6c3b");
+  static Color black = HexColor("#ff000000");
 }

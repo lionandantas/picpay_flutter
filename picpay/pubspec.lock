@@ -74,6 +74,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.7"
+  page_indicator:
+    dependency: "direct main"
+    description:
+      name: page_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3+1"
   path:
     dependency: transitive
     description:
