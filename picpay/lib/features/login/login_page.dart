@@ -55,7 +55,7 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                 children: <Widget>[
                   Padding(
                       padding: const EdgeInsets.only(
-                          top: 150.0, bottom: 5.0, left: 40.0, right: 40.0),
+                          top: 150.0, bottom: 5.0, left: 20.0, right: 20.0),
                       child: new TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         autofocus: true,
@@ -66,11 +66,12 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                             labelText: 'E-mail nome de usuário ou telefone',
                             enabledBorder: new UnderlineInputBorder(
                                 borderSide:
-                                    new BorderSide(color: PicpayStyles.white)),
+                                    new BorderSide(color: PicpayStyles.black)),
                             //  hintText: "Entre com seu E-mail",
                             focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: PicpayStyles.black),
+                              borderSide: BorderSide(color: PicpayStyles.white),
                             ),
+                            
                             hintStyle: TextStyle(
                                 fontSize: 15.0, color: PicpayStyles.white),
                             labelStyle: TextStyle(
@@ -80,22 +81,29 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                       )),
                   Padding(
                     padding: const EdgeInsets.only(
-                        bottom: 10.0, left: 40.0, right: 40.0),
+                        bottom: 10.0, left: 20.0, right: 20.0),
                     child: new TextFormField(
                       autofocus: true,
                       obscureText: true,
                       decoration: new InputDecoration(
                           labelText: 'Senha',
-                          fillColor: PicpayStyles.black,
+                          fillColor: PicpayStyles.white,
+                          border: new UnderlineInputBorder(
+                            borderSide: new BorderSide(
+                              color: PicpayStyles.black,
+                              width: 1.0,
+                              style: BorderStyle.solid,
+                            ),
+                          ),
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: PicpayStyles.white),
                           ),
                           //suffixIcon: Icon(Icons.email),
                           enabledBorder: new UnderlineInputBorder(
                               borderSide:
-                                  new BorderSide(color: PicpayStyles.white)),
+                                  new BorderSide(color: PicpayStyles.black)),
                           hintStyle: TextStyle(
-                              fontSize: 15.0, color: PicpayStyles.black),
+                              fontSize: 15.0, color: PicpayStyles.white),
                           labelStyle: new TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 16.0,
@@ -107,7 +115,7 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                   ),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
+                          EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
                       child: Container(
                         color: Colors.transparent,
                         width: MediaQuery.of(context).size.width,
