@@ -121,7 +121,7 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                         width: MediaQuery.of(context).size.width,
                         height: 50,
                         child: PicPayButton(
-                          text: "ENTRAR",
+                          text: "Entrar",
                           onPressed: () => _submitForm(),
                           colorBackground: PicpayStyles.white,
                           colorText: PicpayStyles.black,
