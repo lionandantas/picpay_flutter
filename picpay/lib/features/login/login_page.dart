@@ -5,8 +5,6 @@ import 'package:picpay/features/base/BaseView.dart';
 import 'package:picpay/features/login/login_contract.dart';
 import 'package:picpay/features/login/login_presenter.dart';
 import 'dart:ui';
-
-import 'package:picpay/widgets/HexColor.dart';
 import 'package:picpay/widgets/PicPayButton.dart';
 
 class LoginPage extends BaseView<_LoginPageState> {
@@ -17,7 +15,6 @@ class LoginPage extends BaseView<_LoginPageState> {
 class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
     implements LoginContract {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _passwordTextController = TextEditingController();
   final scaffoldKey = new GlobalKey<ScaffoldState>();
 
   final Map<String, dynamic> _formData = {
@@ -29,12 +26,11 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
   @override
   void initState() {
     super.initState();
-    /*SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: HexColor("#10C66F"),
-    ));*/
   }
 
-  void _submitForm() async {}
+  void _submitForm() async {
+    Navigator.pushNamed(context, "/root");
+  }
 
   @override
   Widget create(BuildContext context) {
@@ -71,7 +67,6 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: PicpayStyles.white),
                             ),
-                            
                             hintStyle: TextStyle(
                                 fontSize: 15.0, color: PicpayStyles.white),
                             labelStyle: TextStyle(
