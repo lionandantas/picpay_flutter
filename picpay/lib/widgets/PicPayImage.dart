@@ -2,15 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-
 class PicPayImage extends StatelessWidget {
   final String imagem;
+  final String url;
   final double width;
   final double height;
   final void Function() onPressed;
 
   PicPayImage({
     this.imagem,
+    this.url,
     this.width = 50.0,
     this.height = 30.0,
     this.onPressed,
@@ -18,7 +19,6 @@ class PicPayImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return GestureDetector(
         onTap: onPressed,
         child: Stack(
@@ -48,7 +48,9 @@ class PicPayImage extends StatelessWidget {
                 child: FadeInImage(
                   fit: BoxFit.cover,
                   placeholder: AssetImage('assets/images/avatar_person.png'),
-                  image: CachedNetworkImageProvider(imagem),
+                  image: Image.asset(this.imagem).image,/*this.url == null && this.url.isEmpty
+                      ? Image.asset(this.imagem).image
+                      : CachedNetworkImageProvider(this.url),*/
                 ),
               ),
             ),

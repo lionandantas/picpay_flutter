@@ -82,7 +82,7 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
                                     new Radius.circular(1.0)),
                               ),
                               child: Center(
-                                child: Text("Tods",
+                                child: Text("Todos",
                                     style: TextStyle(
                                       color: PicpayStyles.primaryColor,
                                       fontWeight: FontWeight.bold,

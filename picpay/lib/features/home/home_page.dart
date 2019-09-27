@@ -51,7 +51,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                 ),
               ),
             )),*/
-            new TabBar(
+           /* new TabBar(
               controller: controller,
               indicatorColor: Color(0XFF1D4384),
               unselectedLabelColor: Color(0XFFAAAAAA),
@@ -65,7 +65,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                   text: 'Minhas',
                 ),
               ],
-            ),
+            ),*/
             flexibleSpace: new FlexibleSpaceBar(
               background: new Container(
                 child: ListView(
@@ -75,7 +75,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         centerTitle: true,
                         backgroundColor: PicpayStyles.white,
                         leading: Icon(
-                          Icons.menu,
+                          Icons.code,
                           color: PicpayStyles.primaryColor,
                         ),
                         primary: false,
@@ -100,7 +100,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         ),
                         actions: <Widget>[
                           IconButton(
-                            icon: Icon(Icons.notifications,
+                            icon: Icon(Icons.verified_user,
                                 color: PicpayStyles.primaryColor),
                             onPressed: () {},
                           )
@@ -116,14 +116,14 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         decoration:
                             BoxDecoration(color: PicpayStyles.primaryColor),
                         child: Text(
-                          'Sugestôes para Você',
+                          'Sugestões para você',
                           style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.normal,
                               letterSpacing: 1.0,
                               color: Colors.white,
                               fontFamily: "Roboto",
-                              wordSpacing: 2.0),
+                              ),
                         ),
                         // color: Colors.white,
                       ),

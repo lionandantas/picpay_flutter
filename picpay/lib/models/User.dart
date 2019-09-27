@@ -1,6 +1,7 @@
 class User {
-  User(this.name, this.image);
+  User(this.name, this.imagem);
   String name;
-  String image;
+  String url;
+  String imagem;
   String email;
 }

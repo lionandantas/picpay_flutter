@@ -23,7 +23,8 @@ class PicPayCircle extends StatelessWidget {
                 PicPayImage(
                   onPressed: onPressed,
                   width: 70,
-                  imagem: user.name,
+                  imagem: user.imagem,
+                  url: "",
                   height: 70,
                 ),
                 SizedBox(
