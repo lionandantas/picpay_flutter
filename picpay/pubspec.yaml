@@ -26,6 +26,7 @@ dependencies:
   flutter_simple_dependency_injection: any
   connectivity: ^0.4.4
   page_indicator: ^0.1.0
+  cached_network_image: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -47,7 +48,8 @@ flutter:
     - assets/images/white_logo.png
     - assets/images/ic_home_help_white.png  
     - assets/images/ic_home_help.png
-    - assets/images/ic_cifrao_pagar.png    
+    - assets/images/ic_cifrao_pagar.png
+    - assets/images/avatar_person.png    
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
