@@ -22,7 +22,7 @@ samples, guidance on mobile development, and a full API reference.
   <tr>
     <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190920-161644.png" alt="Splash Screen" width="250"/></th>
     <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190920-161631.png" alt="Enter Page" width="250"/></th> 
-   <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190923-151549.png" alt="Login Page" width="250"/></th> 
+   <th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/Screenshot_20190923-151549.png" alt="Login Page" width="250"/><th><img src="https://github.com/lionandantas/picpay_flutter/blob/master/picpay/screenshots/home.gif" alt="Login Page" width="250"/></th> 
   </tr>
   
 </table>
