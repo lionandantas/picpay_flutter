@@ -93,7 +93,6 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                           focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: PicpayStyles.white),
                           ),
-                          //suffixIcon: Icon(Icons.email),
                           enabledBorder: new UnderlineInputBorder(
                               borderSide:
                                   new BorderSide(color: PicpayStyles.black)),
@@ -127,7 +126,7 @@ class _LoginPageState extends BaseState<LoginPresenter, LoginPage>
                           EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
                       child: new GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, "/recoverpassword");
+                          
                         },
                         child: Text("Esqueceu sua senha do PicPay?",
                             style: TextStyle(

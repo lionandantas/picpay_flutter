@@ -22,14 +22,6 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
   void initState() {
     super.initState();
     widget.controller.addListener(() {
-
-      print("AQUI"+widget.controller.index.toString());
-
-       print("AQUI  PRES"+ widget.controller.previousIndex.toString());
-     
-      setState(() {
-          _currentIndex = widget.controller.index;
-        });
       
     });
   }
@@ -40,18 +32,38 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
       height: 56.0,
       decoration: new BoxDecoration(
         color: PicpayStyles.picPayPresBar,
-        //border: new Border.all(color: Colors.black),
       ),
       child: Row(
         children: <Widget>[
           Expanded(
             flex: 1,
             child: Padding(
-              child: Text("Atividades"),
+              child: Text("Atividades",style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
               padding: EdgeInsets.all(20.0),
             ),
           ),
-          Expanded(
+          new Expanded(
+            flex: 2,
+            child: Padding(
+              child: TabBar(
+                controller: widget.controller,
+                indicatorColor: PicpayStyles.primaryColor,
+                unselectedLabelColor: PicpayStyles.picPayColorTextTab,
+                labelColor: PicpayStyles.primaryColor,
+                labelPadding: EdgeInsets.only(right: 10.0, left: 10.0),
+                tabs: [
+                  new Tab(
+                    text: 'Todos',
+                  ),
+                  new Tab(
+                    text: 'Minhas',
+                  ),
+                ],
+              ),
+              padding: EdgeInsets.only(right: 10),
+            ),
+          )
+          /*Expanded(
               flex: 1,
               child: Padding(
                   padding: EdgeInsets.only(left: 10, right: 10),
@@ -131,7 +143,7 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
                             ),
                           ))),
                 )),
-          ),
+          ),*/
         ],
       ),
     );

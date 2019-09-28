@@ -16,6 +16,7 @@ class PicpayStyles {
   static Color black = HexColor("#ff000000");
   static Color picPayPressButton = HexColor("#073D33");
   static Color picPayPresBar = HexColor("#F0F0F0");
+  static Color picPayColorTextTab = HexColor("#AAAAAA");
 
 
   

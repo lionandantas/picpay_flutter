@@ -3,6 +3,7 @@ import 'package:picpay/config/picpayStyles.dart';
 import 'package:picpay/features/base/BaseView.dart';
 import 'package:picpay/features/home/home_contract.dart';
 import 'package:picpay/features/home/home_presenter.dart';
+import 'package:picpay/models/Payment.dart';
 import 'package:picpay/models/User.dart';
 import 'package:picpay/widgets/PicPayCircle.dart';
 import 'package:picpay/widgets/PicPayTabBar.dart';
@@ -42,30 +43,6 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
             bottom: PicPayTabBar(
               controller: controller,
             ),
-            /* WAppBar(
-                child: new Container(
-              child: new Align(
-                child: Text(
-                  "我是大标题",
-                  style: TextStyle(fontSize: 30.0),
-                ),
-              ),
-            )),*/
-           /* new TabBar(
-              controller: controller,
-              indicatorColor: Color(0XFF1D4384),
-              unselectedLabelColor: Color(0XFFAAAAAA),
-              labelColor: Color(0XFF1D4384),
-              labelPadding: EdgeInsets.only(right: 10.0, left: 10.0),
-              tabs: [
-                new Tab(
-                  text: 'Todos',
-                ),
-                new Tab(
-                  text: 'Minhas',
-                ),
-              ],
-            ),*/
             flexibleSpace: new FlexibleSpaceBar(
               background: new Container(
                 child: ListView(
@@ -118,12 +95,12 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         child: Text(
                           'Sugestões para você',
                           style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.normal,
-                              letterSpacing: 1.0,
-                              color: Colors.white,
-                              fontFamily: "Roboto",
-                              ),
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.normal,
+                            letterSpacing: 1.0,
+                            color: Colors.white,
+                            fontFamily: "Roboto",
+                          ),
                         ),
                         // color: Colors.white,
                       ),
@@ -172,10 +149,10 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
     );
   }
 
-  _buildSearchUser() {
+  usersSuggestion() {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, "/searchUser");
+        
       },
       child: Padding(
         padding: const EdgeInsets.only(
@@ -221,13 +198,6 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                     child: Container(
                       width: 20.0,
                       height: 20.0,
-                      /*decoration: BoxDecoration(
-                    color: isOnline == true ? Colors.green : Colors.grey,
-                    border: Border.all(
-                      width: 4.0,
-                      color: Colors.white,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0)),*/
                     ),
                   )
                 ],
@@ -273,81 +243,16 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
               ],
             )));
   }
-}
-
-class CustomTab extends StatefulWidget {
-  final Function(int) tabSelected;
-  final List<String> items;
-
-  const CustomTab({Key key, this.tabSelected, this.items}) : super(key: key);
 
   @override
-  _CustomTabState createState() => _CustomTabState();
-}
-
-class _CustomTabState extends State<CustomTab> {
-  var categorySelected = 0;
+  onAllPayments(List<Payment> payments) {
+    // TODO: implement onAllPayments
+    return null;
+  }
 
   @override
-  Widget build(BuildContext context) {
-    return _getListCategory();
-  }
-
-  Widget _getListCategory() {
-    ListView listCategory = new ListView.builder(
-        itemCount: widget.items.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return _buildCategoryItem(index);
-        });
-
-    return new Container(
-      height: 50.0,
-      child: listCategory,
-      color: Colors.grey[200].withAlpha(200),
-    );
-  }
-
-  Widget _buildCategoryItem(index) {
-    return new InkWell(
-      onTap: () {
-        setSelectedItem(index);
-        print("click");
-      },
-      child: new Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          new Container(
-            margin: new EdgeInsets.only(left: 10.0),
-            child: new Material(
-              elevation: 2.0,
-              color: categorySelected == index ? Colors.black : Colors.grey,
-              borderRadius: const BorderRadius.all(const Radius.circular(25.0)),
-              child: new Container(
-                padding: new EdgeInsets.only(
-                    left: 12.0, top: 7.0, bottom: 7.0, right: 12.0),
-                child: new Text(
-                  widget.items[index],
-                  style: new TextStyle(
-                      color: categorySelected == index
-                          ? Colors.white
-                          : Colors.black),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  void setSelectedItem(index) {
-    if (index != categorySelected) {
-      widget.tabSelected(index);
-      setState(() {
-        categorySelected = index;
-      });
-    }
+  onMyPayments(List<Payment> payments) {
+    // TODO: implement onMyPayments
+    return null;
   }
 }
