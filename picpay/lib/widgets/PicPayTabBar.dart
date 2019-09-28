@@ -30,7 +30,7 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 56.0,
-      decoration: new BoxDecoration(
+      decoration:  BoxDecoration(
         color: PicpayStyles.picPayPresBar,
       ),
       child: Row(
@@ -42,7 +42,7 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
               padding: EdgeInsets.all(20.0),
             ),
           ),
-          new Expanded(
+           Expanded(
             flex: 2,
             child: Padding(
               child: TabBar(
@@ -52,10 +52,10 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
                 labelColor: PicpayStyles.primaryColor,
                 labelPadding: EdgeInsets.only(right: 10.0, left: 10.0),
                 tabs: [
-                  new Tab(
+                   Tab(
                     text: 'Todos',
                   ),
-                  new Tab(
+                   Tab(
                     text: 'Minhas',
                   ),
                 ],
@@ -79,19 +79,19 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
                         width: 2.0,
                       )),
                     ),
-                    child: new Material(
-                        child: new InkWell(
+                    child:  Material(
+                        child:  InkWell(
                             splashColor: PicpayStyles.primaryColor,
                             highlightColor: PicpayStyles.primaryColor,
                             onTap: () {},
                             child: Container(
                               alignment: Alignment.centerLeft,
-                              margin: new EdgeInsets.all(0.0),
-                              padding: new EdgeInsets.all(0.0),
-                              decoration: new BoxDecoration(
+                              margin:  EdgeInsets.all(0.0),
+                              padding:  EdgeInsets.all(0.0),
+                              decoration:  BoxDecoration(
                                 color: PicpayStyles.picPayPresBar,
-                                borderRadius: new BorderRadius.all(
-                                    new Radius.circular(1.0)),
+                                borderRadius:  BorderRadius.all(
+                                     Radius.circular(1.0)),
                               ),
                               child: Center(
                                 child: Text("Todos",
@@ -119,19 +119,19 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
                       width: 2.0,
                     )),
                   ),
-                  child: new Material(
-                      child: new InkWell(
+                  child:  Material(
+                      child:  InkWell(
                           splashColor: PicpayStyles.primaryColor,
                           highlightColor: PicpayStyles.primaryColor,
                           onTap: () {},
                           child: Container(
                             alignment: Alignment.centerLeft,
-                            margin: new EdgeInsets.all(0.0),
-                            padding: new EdgeInsets.all(0.0),
-                            decoration: new BoxDecoration(
+                            margin:  EdgeInsets.all(0.0),
+                            padding:  EdgeInsets.all(0.0),
+                            decoration:  BoxDecoration(
                               color: PicpayStyles.picPayPresBar,
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(1.0)),
+                              borderRadius:  BorderRadius.all(
+                                   Radius.circular(1.0)),
                             ),
                             child: Center(
                               child: Text("Minhas",
@@ -148,36 +148,36 @@ class _PicPayTabBarState extends State<PicPayTabBar> {
       ),
     );
     /*Container(
-      decoration: new BoxDecoration(
+      decoration:  BoxDecoration(
         color: Colors.redAccent,
-        border: new Border.all(color: Colors.black),
+        border:  Border.all(color: Colors.black),
       ),
-      child: new Row(
+      child:  Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           ///Left Column Title
-          new Column(
+           Column(
             children: <Widget>[
-              new Container(
+               Container(
                 color: Colors.redAccent,
                 padding: const EdgeInsets.all(10.0),
-                child: new Text(
+                child:  Text(
                   "asdasd",
-                  style: new TextStyle(color: Colors.white, fontSize: 18.0),
+                  style:  TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               )
             ],
           ),
 
           ///Right Column Title
-          new Column(
+           Column(
             children: <Widget>[
-              new Container(
+               Container(
                 color: Colors.redAccent,
                 padding: const EdgeInsets.all(10.0),
-                child: new Text(
+                child:  Text(
                   "asdasd",
-                  style: new TextStyle(color: Colors.white, fontSize: 18.0),
+                  style:  TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               )
             ],

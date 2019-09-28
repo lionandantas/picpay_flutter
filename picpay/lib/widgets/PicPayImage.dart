@@ -24,21 +24,21 @@ class PicPayImage extends StatelessWidget {
         child: Stack(
           fit: StackFit.passthrough,
           children: <Widget>[
-            new Container(
+             Container(
               width: width,
               height: height,
-              decoration: new BoxDecoration(
+              decoration:  BoxDecoration(
                   // Circle shape
                   shape: BoxShape.circle,
                   color: Colors.white,
                   // The border you want
-                  border: new Border.all(
+                  border:  Border.all(
                     width: 2.0,
                     color: Colors.white,
                   ),
                   // The shadow you want
                   boxShadow: [
-                    new BoxShadow(
+                     BoxShadow(
                       color: Colors.black.withOpacity(0.2),
                       blurRadius: 5.0,
                     ),

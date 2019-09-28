@@ -6,6 +6,7 @@ import 'package:picpay/features/root/root_contract.dart';
 import 'package:picpay/features/root/root_presenter.dart';
 import 'package:picpay/widgets/PicPayBottomAppBarItem.dart';
 import 'package:picpay/widgets/PicPayFloatingButton.dart';
+import 'package:picpay/config/pic_pay_icons.dart';
 
 class RootPage extends BaseView<_RootPageState> {
   @override
@@ -47,20 +48,20 @@ class _RootPageState extends BaseState<RootPresenter, RootPage>
           onTabSelected: _selectedTab,
           items: [
             PicPayBottomAppBarItem(
-                iconData: Icons.home, text: 'Inicio', notification: false),
+                iconData: PicPay.house_black_silhouette_without_door, text: 'Inicio', notification: false),
             PicPayBottomAppBarItem(
-              iconData: Icons.credit_card,
+              iconData: PicPay.credit_card,
               text: 'Carteira',
               notification: false,
             ),
             PicPayBottomAppBarItem(
-              iconData: Icons.notifications,
+              iconData: PicPay.notification,
               text: 'Notificaoes',
               counter: 2,
               notification: true,
             ),
             PicPayBottomAppBarItem(
-              iconData: Icons.settings,
+              iconData: PicPay.settings,
               text: 'Ajustes',
               notification: false,
             ),

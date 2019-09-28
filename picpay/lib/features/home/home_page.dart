@@ -6,11 +6,13 @@ import 'package:picpay/features/home/home_presenter.dart';
 import 'package:picpay/models/Payment.dart';
 import 'package:picpay/models/User.dart';
 import 'package:picpay/widgets/PicPayCircle.dart';
+import 'package:picpay/widgets/PicPayItemFeed.dart';
 import 'package:picpay/widgets/PicPayTabBar.dart';
+import 'package:picpay/config/pic_pay_icons.dart';
 
 class HomePage extends BaseView<_HomePageState> {
   @override
-  _HomePageState state() => new _HomePageState();
+  _HomePageState state() => _HomePageState();
 }
 
 class _HomePageState extends BaseState<HomePresenter, HomePage>
@@ -18,22 +20,29 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
     implements HomeContract {
   TabController controller;
   List<Widget> commentWidgets;
+  List<Payment> listAll;
+  List<Payment> listMy;
+
   @override
   void initState() {
     super.initState();
     commentWidgets = List<Widget>();
+    listAll = List<Payment>();
+    listMy = List<Payment>();
     presenter.doListUser();
+    presenter.doListAllPayment();
+    presenter.doListMyPayment();
   }
 
   @override
   Widget create(BuildContext context) {
     if (controller == null) {
-      controller = new TabController(length: 2, vsync: this);
+      controller = TabController(length: 2, vsync: this);
     }
     return Scaffold(
-      body: new CustomScrollView(
+      body: CustomScrollView(
         slivers: <Widget>[
-          new SliverAppBar(
+          SliverAppBar(
             expandedHeight: 280.0,
             backgroundColor: Color(0XFFF0F0F0),
             floating: true,
@@ -43,8 +52,8 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
             bottom: PicPayTabBar(
               controller: controller,
             ),
-            flexibleSpace: new FlexibleSpaceBar(
-              background: new Container(
+            flexibleSpace: FlexibleSpaceBar(
+              background: Container(
                 child: ListView(
                   children: <Widget>[
                     Padding(
@@ -52,7 +61,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         centerTitle: true,
                         backgroundColor: PicpayStyles.white,
                         leading: Icon(
-                          Icons.code,
+                          PicPay.qr_code,
                           color: PicpayStyles.primaryColor,
                         ),
                         primary: false,
@@ -77,49 +86,46 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                         ),
                         actions: <Widget>[
                           IconButton(
-                            icon: Icon(Icons.verified_user,
+                            icon: Icon(PicPay.follow,
                                 color: PicpayStyles.primaryColor),
                             onPressed: () {},
                           )
                         ],
                       ),
-                      padding: const EdgeInsets.only(
-                          top: 0.0, left: 0.0, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(top: 0.0, left: 0.0, bottom: 0.0),
                     ),
                     Padding(
                       child: Container(
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                             left: 20.0, top: 20.0, bottom: 10.0),
                         decoration:
                             BoxDecoration(color: PicpayStyles.primaryColor),
                         child: Text(
                           'Sugestões para você',
                           style: TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.normal,
-                            letterSpacing: 1.0,
-                            color: Colors.white,
-                            fontFamily: "Roboto",
-                          ),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.normal,
+                              letterSpacing: 1.0,
+                              color: Colors.white),
                         ),
                         // color: Colors.white,
                       ),
-                      padding: const EdgeInsets.only(
-                          top: 0.0, left: 0.0, bottom: 0.0),
+                      padding:
+                          EdgeInsets.only(top: 0.0, left: 0.0, bottom: 0.0),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 0.0),
+                      padding: EdgeInsets.only(top: 0.0),
                       child: Container(
                           height: 120.0,
-                          padding: const EdgeInsets.only(top: 0.0),
+                          padding: EdgeInsets.only(top: 0.0),
                           decoration:
                               BoxDecoration(color: PicpayStyles.primaryColor),
                           child: ListView(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
                             children: <Widget>[
-                              // _buildSearchUser(),
-                              new Row(
+                              Row(
                                 children: commentWidgets,
                               )
                             ],
@@ -128,35 +134,49 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                   ],
                 ),
               ),
-
-              // title: new Text("Sliver App Bar"),
             ),
           ),
-          new SliverFillRemaining(
-              child: new TabBarView(
+          SliverFillRemaining(
+              child: TabBarView(
             controller: controller,
-            children: <Widget>[Text("A"), Text("B")],
+            children: <Widget>[
+              Container(
+                color: PicpayStyles.picPayPresBar,
+                child: ListView.builder(
+                  itemCount: listAll.length,
+                  itemBuilder: (context, index) {
+                    return _buildFeed(listAll[index]);
+                  },
+                ),
+              ),
+              Container(
+                color: PicpayStyles.picPayPresBar,
+                child: ListView.builder(
+                  itemCount: listMy.length,
+                  itemBuilder: (context, index) {
+                    return _buildFeed(listMy[index]);
+                  },
+                ),
+              )
+            ],
           )),
-          /*new SliverFixedExtentList(
-            itemExtent: 150.0,
-            delegate:
-                new SliverChildBuilderDelegate((context, index) => new ListTile(
-                      title: new Text("List item $index"),
-                    )),
-          )*/
         ],
       ),
     );
   }
 
+  _buildFeed(Payment item) {
+    return PicPayItemFeed(
+      item: item,
+      onPressed: () {},
+    );
+  }
+
   usersSuggestion() {
     return GestureDetector(
-      onTap: () {
-        
-      },
+      onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.only(
-            top: 0.0, bottom: 00.0, left: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 0.0, bottom: 00.0, left: 5.0, right: 5.0),
         child: Container(
           decoration: BoxDecoration(shape: BoxShape.circle),
           child: Column(
@@ -164,15 +184,15 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
               Stack(
                 fit: StackFit.passthrough,
                 children: <Widget>[
-                  new Container(
+                  Container(
                     width: 50.0,
                     height: 50.0,
-                    decoration: new BoxDecoration(
+                    decoration: BoxDecoration(
                       // Circle shape
                       shape: BoxShape.circle,
                       color: Colors.black12,
                       // The border you want
-                      border: new Border.all(
+                      border: Border.all(
                         width: 2.0,
                         color: Colors.white,
                       ),
@@ -194,7 +214,7 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(35.0, 35.0, 3.0, 2.0),
+                    padding: EdgeInsets.fromLTRB(35.0, 35.0, 3.0, 2.0),
                     child: Container(
                       width: 20.0,
                       height: 20.0,
@@ -228,8 +248,8 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
   _buildCircular(User record) {
     return GestureDetector(
         onTap: () {},
-        child: new Padding(
-            padding: const EdgeInsets.only(
+        child: Padding(
+            padding: EdgeInsets.only(
                 top: 0.0, bottom: 00.0, left: 10.0, right: 10.0),
             child: Column(
               children: <Widget>[
@@ -246,13 +266,15 @@ class _HomePageState extends BaseState<HomePresenter, HomePage>
 
   @override
   onAllPayments(List<Payment> payments) {
-    // TODO: implement onAllPayments
-    return null;
+    setState(() {
+      listAll.addAll(payments);
+    });
   }
 
   @override
   onMyPayments(List<Payment> payments) {
-    // TODO: implement onMyPayments
-    return null;
+    setState(() {
+      listMy.addAll(payments);
+    });
   }
 }

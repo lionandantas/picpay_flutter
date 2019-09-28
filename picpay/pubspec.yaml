@@ -74,6 +74,9 @@ flutter:
      - family: Robo
        fonts:
         - asset: assets/fonts/robo_font.ttf
+     - family: PicPay
+       fonts:
+        - asset: assets/fonts/PicPay.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
